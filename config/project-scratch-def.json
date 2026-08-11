@@ -1,0 +1,13 @@
+{
+  "orgName": "Enterprise Orchestrator Scratch Org",
+  "edition": "Developer",
+  "features": ["EnableSetPasswordInApi", "PlatformEvents"],
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": false
+    }
+  }
+}

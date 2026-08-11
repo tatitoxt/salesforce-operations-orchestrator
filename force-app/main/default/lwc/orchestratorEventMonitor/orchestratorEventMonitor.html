@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="Real-Time Event Stream" icon-name="utility:broadcast">
+        <div slot="actions">
+            <span class={connectionBadgeClass}>{connectionStatus}</span>
+            <lightning-button-icon
+                icon-name="utility:clear"
+                alternative-text="Clear Feed"
+                title="Clear Feed"
+                onclick={handleClearFeed}
+                class="slds-m-left_x-small">
+            </lightning-button-icon>
+        </div>
+        <div class="slds-p-horizontal_medium event-feed-container">
+            <template if:true={events.length}>
+                <ul class="slds-timeline">
+                    <template for:each={events} for:item="evt">
+                        <li key={evt.id} class="slds-m-bottom_x-small">
+                            <div class="slds-timeline__item_expandable slds-timeline__item_task">
+                                <div class="slds-media">
+                                    <div class="slds-media__figure">
+                                        <lightning-icon icon-name="utility:notification_event" size="x-small"></lightning-icon>
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <div class="slds-grid slds-grid_align-spread">
+                                            <span class="slds-text-heading_x-small font-semibold">{evt.status}</span>
+                                            <span class="slds-text-color_weak slds-text-body_small">{evt.time}</span>
+                                        </div>
+                                        <p class="slds-text-body_small slds-m-top_xxx-small">{evt.message}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template if:false={events.length}>
+                <div class="slds-text-align_center slds-p-vertical_large slds-text-color_weak">
+                    Listening for platform events...
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,22 @@
+.orchestrator-app-container {
+    background-color: #f8fafc;
+    min-height: 100vh;
+}
+
+.header-banner {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    border: none;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.header-banner .slds-page-header__title {
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
+.header-banner .slds-page-header__name-meta {
+    color: #94a3b8 !important;
+}

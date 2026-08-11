@@ -1,0 +1,21 @@
+.rule-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    padding: 0.875rem;
+}
+
+.rule-title {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 0.95rem;
+}
+
+.rule-detail-grid {
+    font-size: 0.825rem;
+    color: #475569;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+}

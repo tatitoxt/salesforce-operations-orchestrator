@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <label>Category</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Data Sync</fullName>
+                <default>true</default>
+                <label>Data Sync</label>
+            </value>
+            <value>
+                <fullName>Workflow Automation</fullName>
+                <default>false</default>
+                <label>Workflow Automation</label>
+            </value>
+            <value>
+                <fullName>Integration API</fullName>
+                <default>false</default>
+                <label>Integration API</label>
+            </value>
+            <value>
+                <fullName>Billing Audit</fullName>
+                <default>false</default>
+                <label>Billing Audit</label>
+            </value>
+            <value>
+                <fullName>System Maintenance</fullName>
+                <default>false</default>
+                <label>System Maintenance</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

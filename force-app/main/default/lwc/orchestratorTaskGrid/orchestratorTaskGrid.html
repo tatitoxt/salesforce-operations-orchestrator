@@ -1,0 +1,75 @@
+<template>
+    <lightning-card title="Workflows & Operations Grid" icon-name="utility:table">
+        <div slot="actions">
+            <lightning-button-group>
+                <lightning-button
+                    label="Execute Batch"
+                    icon-name="utility:play"
+                    variant="brand"
+                    onclick={handleExecuteSelected}
+                    disabled={isBatchDisabled}>
+                </lightning-button>
+                <lightning-button
+                    label="Seed Demo Data"
+                    icon-name="utility:database"
+                    onclick={handleSeedData}>
+                </lightning-button>
+                <lightning-button
+                    label="Clear All"
+                    icon-name="utility:delete"
+                    variant="destructive-text"
+                    onclick={handleClearAll}>
+                </lightning-button>
+            </lightning-button-group>
+        </div>
+
+        <div class="slds-p-horizontal_medium">
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading operations..." size="medium"></lightning-spinner>
+            </template>
+
+            <template if:true={tasks.length}>
+                <c-custom-datatable
+                    key-field="id"
+                    data={tasks}
+                    columns={columns}
+                    onrowaction={handleRowAction}
+                    onrowselection={handleRowSelection}
+                    hide-checkbox-column={false}>
+                </c-custom-datatable>
+
+                <div class="slds-grid slds-grid_align-spread slds-m-top_medium slds-grid_vertical-align-center">
+                    <div class="slds-text-color_weak slds-text-body_small">
+                        Showing page {pageNumber} (Total tasks: {totalCount})
+                    </div>
+                    <div>
+                        <lightning-button-icon
+                            icon-name="utility:chevronleft"
+                            alternative-text="Previous Page"
+                            onclick={handlePreviousPage}
+                            disabled={isFirstPage}>
+                        </lightning-button-icon>
+                        <span class="slds-p-horizontal_small font-medium">{pageNumber}</span>
+                        <lightning-button-icon
+                            icon-name="utility:chevronright"
+                            alternative-text="Next Page"
+                            onclick={handleNextPage}
+                            disabled={isLastPage}>
+                        </lightning-button-icon>
+                    </div>
+                </div>
+            </template>
+
+            <template if:false={tasks.length}>
+                <template if:false={isLoading}>
+                    <div class="slds-text-align_center slds-p-around_large">
+                        <lightning-icon icon-name="utility:empty" size="large" class="slds-m-bottom_small"></lightning-icon>
+                        <h3 class="slds-text-heading_medium font-semibold">No Operations Found</h3>
+                        <p class="slds-text-color_weak slds-m-bottom_medium">Click 'Seed Demo Data' above to generate 20 sample operations.</p>
+                        <lightning-button label="Seed Demo Data Now" icon-name="utility:database" variant="brand" onclick={handleSeedData}></lightning-button>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

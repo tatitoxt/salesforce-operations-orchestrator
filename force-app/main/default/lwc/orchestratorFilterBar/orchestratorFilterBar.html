@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="Search & Filter Matrix" icon-name="utility:filterList" class="slds-m-bottom_medium">
+        <div class="slds-p-horizontal_medium">
+            <div class="slds-grid slds-gutters slds-wrap slds-grid_vertical-align-end">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12">
+                    <lightning-input
+                        type="search"
+                        label="Search Task Subject / ID"
+                        placeholder="Type to filter..."
+                        value={searchTerm}
+                        onchange={handleSearchChange}>
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_2-of-12">
+                    <lightning-combobox
+                        name="status"
+                        label="Status"
+                        value={statusValue}
+                        options={statusOptions}
+                        onchange={handleStatusChange}>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_2-of-12">
+                    <lightning-combobox
+                        name="priority"
+                        label="Priority"
+                        value={priorityValue}
+                        options={priorityOptions}
+                        onchange={handlePriorityChange}>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_2-of-12">
+                    <lightning-combobox
+                        name="category"
+                        label="Category"
+                        value={categoryValue}
+                        options={categoryOptions}
+                        onchange={handleCategoryChange}>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_2-of-12 slds-m-top_x-small">
+                    <lightning-button
+                        label="Reset Filters"
+                        icon-name="utility:refresh"
+                        onclick={handleResetFilters}
+                        class="slds-m-right_x-small">
+                    </lightning-button>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

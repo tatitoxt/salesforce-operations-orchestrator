@@ -1,0 +1,56 @@
+<template>
+    <div class="slds-grid slds-gutters slds-wrap slds-m-bottom_medium">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12">
+            <div class="kpi-card kpi-total">
+                <div class="slds-media slds-media_center">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="standard:task" size="medium"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="kpi-value">{totalTasks}</div>
+                        <div class="kpi-label">Total Workflows</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12">
+            <div class="kpi-card kpi-critical">
+                <div class="slds-media slds-media_center">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="utility:warning" size="medium" variant="warning"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="kpi-value text-critical">{criticalPending}</div>
+                        <div class="kpi-label">Critical Pending</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12">
+            <div class="kpi-card kpi-success">
+                <div class="slds-media slds-media_center">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="standard:task_check" size="medium"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="kpi-value text-success">{completionRate}%</div>
+                        <div class="kpi-label">Completion Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12">
+            <div class="kpi-card kpi-info">
+                <div class="slds-media slds-media_center">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="utility:graph" size="medium"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="kpi-value">{avgProgress}%</div>
+                        <div class="kpi-label">Avg Execution Progress</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

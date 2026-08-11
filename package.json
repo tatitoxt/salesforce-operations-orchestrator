@@ -1,0 +1,23 @@
+{
+  "name": "salesforce-operations-orchestrator",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Salesforce Enterprise Operations & Dynamic Workflow Orchestrator",
+  "scripts": {
+    "lint": "eslint **/{aura,lwc}/**",
+    "test": "npm run test:unit",
+    "test:unit": "sfdx-lwc-jest",
+    "test:unit:watch": "sfdx-lwc-jest --watch",
+    "test:unit:debug": "sfdx-lwc-jest --debug",
+    "test:unit:coverage": "sfdx-lwc-jest --coverage",
+    "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,sheet,xml,yaml,yml}\"",
+    "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,sheet,xml,yaml,yml}\""
+  },
+  "devDependencies": {
+    "@salesforce/eslint-config-lwc": "^3.5.2",
+    "@salesforce/sfdx-lwc-jest": "^5.0.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-apex": "^2.1.0"
+  }
+}

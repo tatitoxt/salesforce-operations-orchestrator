@@ -1,0 +1,8 @@
+.event-feed-container {
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
