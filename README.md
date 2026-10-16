@@ -2,6 +2,13 @@
 
 Proyecto de práctica con Salesforce DX para modelar tareas operativas, reglas de ejecución y componentes Lightning. Incluye clases Apex, triggers, metadatos de Salesforce y componentes LWC.
 
+```bash
+git clone https://github.com/tatitoxt/salesforce-operations-orchestrator.git
+cd salesforce-operations-orchestrator
+sf org login web --alias dev
+sf project deploy start --target-org dev
+```
+
 ## Qué contiene
 
 - Modelo de tareas operativas y reglas configurables mediante Custom Metadata.
@@ -12,13 +19,6 @@ Proyecto de práctica con Salesforce DX para modelar tareas operativas, reglas d
 ## Preparar el entorno
 
 Necesitás Salesforce CLI y una scratch org o una Developer Edition. Para desplegar el proyecto:
-
-```bash
-git clone https://github.com/tatitoxt/salesforce-operations-orchestrator.git
-cd salesforce-operations-orchestrator
-sf org login web --alias dev
-sf project deploy start --target-org dev
-```
 
 Para ejecutar las pruebas:
 
